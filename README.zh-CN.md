@@ -75,6 +75,10 @@
 
 别一次装全部。**挑一条离你的活最近的，跑满两周，还在手动救火就删掉重来。**
 
+## 关注清单
+
+36 个值得关注的 AI 学习博主（YouTube / X / B站 / Newsletter / 播客），配合工作流当输入源：[FOLLOW.md](./FOLLOW.md) · [网页版](https://realagentusecases.com/follow/)
+
 ## 订阅
 
 每周一条完整可复制的工作流拆解（触发、工具、步骤、踩过的坑）：[realagentusecases.com](https://realagentusecases.com)

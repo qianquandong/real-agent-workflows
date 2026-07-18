@@ -77,6 +77,10 @@ Also, the specifics inside these workflows are just **what I happen to care abou
 
 Don't install everything at once. **Pick the one closest to your actual work, run it for two weeks, and if you're still firefighting manually, delete it and rebuild.**
 
+## Follow list
+
+36 AI creators and accounts worth following (YouTube / X / Bilibili / newsletters / podcasts), curated as input sources for these workflows: [FOLLOW.md](./FOLLOW.md) (Chinese) · [web version](https://realagentusecases.com/follow/)
+
 ## Subscribe
 
 One fully reproducible workflow breakdown per week (trigger, tools, steps, the mistakes): [realagentusecases.com](https://realagentusecases.com)
