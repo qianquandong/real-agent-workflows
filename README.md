@@ -1,9 +1,9 @@
 # Real Agent Workflows
 
 > 我真实在跑的 AI 工作流，逐条开源。
-> My real, running AI workflows — open-sourced one at a time. Docs are in Chinese; the SKILL.md files work with Claude Code out of the box.
+> My real, running AI workflows — open-sourced one at a time. Docs are in Chinese. Each SKILL.md is a plain-markdown playbook: Claude Code reads it natively, and any agent tool (Codex, OpenCode, OpenClaw, Hermes, …) can follow it.
 
-这里没有工具榜单。每个文件夹是一条**真实在我 Mac 上跑的工作流**：写清触发、步骤、产出，附一份脱敏后的 `SKILL.md`，替换几个占位符就能装进你自己的 Claude Code。
+这里没有工具榜单。每个文件夹是一条**真实在我电脑上跑的工作流**：写清触发、步骤、产出，附一份脱敏后的 `SKILL.md`。它本质就是一份写清步骤的 markdown 说明书——**这个仓库是向导，不绑定任何工具**，替换几个占位符就能喂给你自己的 agent。
 
 完整导览（22 条全量 + 背景）：**[我真实在跑的 22 条 AI 工作流](https://realagentusecases.com/agent-101/03-ai-tools-workflows/)**
 
@@ -12,7 +12,7 @@
 - **Skill** = 一个能力：怎么做好一件事的说明书，被动调用。
 - **工作流** = 触发 + 步骤 + 产出的完整链条，定时或事件触发，自己跑。
 
-本仓库按**工作流**组织；每条工作流的载体是标准的 `SKILL.md` 文件，装进 `~/.claude/skills/` 即用，挂上定时任务就成为工作流。
+本仓库按**工作流**组织；每条工作流的载体是 `SKILL.md`——一份任何 agent 都能执行的步骤说明书，挂上定时触发就成为工作流。
 
 ## 已开源
 
@@ -62,10 +62,13 @@
 
 ## 怎么用
 
-1. 装 [Claude Code](https://claude.com/claude-code)（桌面端或 CLI）
-2. 挑一条工作流，把它的 `SKILL.md` 复制到 `~/.claude/skills/<名字>/SKILL.md`
-3. 替换文件顶部说明的占位符（库路径等）
-4. 先手动跑一次验证产出，再挂成定时任务
+这个仓库是**向导，不是插件**。用什么 agent 工具都行：
+
+- **Claude Code**：把 `SKILL.md` 复制到 `~/.claude/skills/<名字>/SKILL.md` 即被识别，挂 scheduled task 变定时
+- **Codex / OpenCode / OpenClaw / Hermes 或其他 agent**：把 `SKILL.md` 的内容当作任务指令喂给它，用各家自己的定时机制触发
+- 不管用哪个：先替换文件顶部说明的占位符 → 手动跑一次验证产出 → 再挂定时
+
+另外，工作流里的具体内容也只是**我在意的东西**：信息源、平台、分类领域都按你自己的生活换。结构是通用的，内容是你的。
 
 别一次装全部。**挑一条离你的活最近的，跑满两周，还在手动救火就删掉重来。**
 

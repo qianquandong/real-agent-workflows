@@ -23,9 +23,9 @@
 
 ## 怎么装
 
-1. 把 [`SKILL.md`](./SKILL.md) 复制到 `~/.claude/skills/obsidian-favorites-harvest/SKILL.md`
+1. Claude Code 用户：把 [`SKILL.md`](./SKILL.md) 复制到 `~/.claude/skills/obsidian-favorites-harvest/SKILL.md`；其他 agent 工具见[根 README 的通用说明](../README.md#怎么用)
 2. 替换占位符：库路径、知识卡文件夹、你的小红书收藏页 URL、领域清单
-3. 需要 [Claude in Chrome](https://claude.com/chrome) 扩展（要用你真实浏览器的登录态）+ `yt-dlp` + Whisper
+3. 需要能控制你真实浏览器（登录态）的 agent 浏览器扩展——作者用 [Claude in Chrome](https://claude.com/chrome)，其他 agent 的浏览器控制同理——外加 `yt-dlp` + Whisper
 4. 先手动跑一次（首次是全量 backfill，会分批），确认知识卡质量再挂定时
 
 ---

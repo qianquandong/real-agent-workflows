@@ -40,4 +40,4 @@ description: 每日 AI 热点采集 · 定时把过去 24 小时的 AI 圈动态
 
 ## 怎么定时跑
 
-在 Claude Code / Claude 桌面端里把本 SKILL.md 注册为定时任务（scheduled task），建议每天早上内容创作开始前跑（作者设在 05:34）。电脑关机错过的话，下次开机手动补跑一次即可。
+把本 SKILL.md 注册成你所用 agent 工具的定时任务（Claude Code 的 scheduled task，或其他 agent 的定时触发机制），建议每天早上内容创作开始前跑（作者设在 05:34）。电脑关机错过的话，下次开机手动补跑一次即可。

@@ -13,13 +13,13 @@
 
 ## 怎么装
 
-1. 把 [`SKILL.md`](./SKILL.md) 复制到 `~/.claude/skills/obsidian-ai-news-input/SKILL.md`
+1. Claude Code 用户：把 [`SKILL.md`](./SKILL.md) 复制到 `~/.claude/skills/obsidian-ai-news-input/SKILL.md`；其他 agent 工具见[根 README 的通用说明](../README.md#怎么用)
 2. 替换文件里的两个占位符：`<你的库路径>`、`<简报文件夹>`
 3. 手动跑一次确认产出符合预期，再挂成定时任务
 
 ## 依赖
 
-- Claude Code（或 Claude 桌面端）
+- 任何能执行 markdown 指令的 agent 工具（作者用 Claude Code；Codex / OpenCode / OpenClaw / Hermes 同理）
 - 一个 Obsidian 库（其实任何 markdown 文件夹都行）
 - [aihot.virxact.com](https://aihot.virxact.com) 公开 API（无需注册；接口不可用时自动降级为 WebSearch）
 
