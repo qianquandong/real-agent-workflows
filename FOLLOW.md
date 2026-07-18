@@ -44,7 +44,7 @@
 | [@op7418](https://x.com/op7418) | 歸藏 | AI 工具新玩法中文首发 |
 | [@vista8](https://x.com/vista8) | 向阳乔木 | AI 工具和方法论分享，中文圈活跃节点 |
 | [@oran_ge](https://x.com/oran_ge) | Orange AI | AI 产品视角，什么能做成产品嗅觉好 |
-| [@imxiaohu](https://x.com/imxiaohu) | 小互 | AI 资讯最勤账号之一，新工具当天有演示 |
+| [@xiaohu](https://x.com/xiaohu) | 小互 | AI 资讯最勤账号之一，新工具当天有演示 |
 | [@dontbesilent](https://x.com/dontbesilent) | dontbesilent | 商业模式和内容创业的思考——AI 之外补的那门商业课 |
 
 ## B站与中文平台（4）
