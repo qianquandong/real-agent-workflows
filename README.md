@@ -22,6 +22,7 @@
 | [Obsidian · 首页驾驶舱](./obsidian-morning-cockpit/) | 三源抓料 + Gmail 分类，每早组装成一页早报，素材等人勾选 | ✅ 可用 |
 | [Obsidian · 收藏收割](./obsidian-favorites-harvest/) | 每周抓小红书/抖音收藏新增，筛掉纯娱乐，转文字入知识库 | ✅ 可用 |
 | [Obsidian · 短视频稿输出](./obsidian-script-output/)（可选下游） | 从素材库选题，每天产出中英各一版 1 分半口播逐字稿 | ✅ 可用 |
+| [邮箱 Triage](./email-triage/) | 输一个词，读完 24 小时邮件，打标（Action Required / FYI）+ P0/P1/P2 待办清单 | ✅ 可用 |
 
 四条合起来是一个完整闭环：**资讯和收藏进库（输入）→ 一页早报人工勾选（把关）→ 素材变稿（输出）**，人只负责打勾、拍板和出镜。
 
@@ -57,7 +58,7 @@
 
 | # | 工作流 | 状态 |
 |---|---|---|
-| 17 | Gmail 邮件 → 打标（Action Required / FYI）+ 待办清单 | 整理中 |
+| 17 | 邮箱 → 打标（Action Required / FYI）+ 待办清单 | ✅ 见上 |
 | 18-22 | 会议 AI 记录、商业诊断、租房申请审核、电子书发 Kindle、会话归档 | 整理中 |
 
 ## 怎么用
