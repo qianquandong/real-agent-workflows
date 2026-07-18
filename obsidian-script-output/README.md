@@ -15,7 +15,7 @@
 
 ## 怎么装
 
-1. 把 [`SKILL.md`](./SKILL.md) 复制到 `~/.claude/skills/obsidian-script-output/SKILL.md`
+1. Claude Code 用户：把 [`SKILL.md`](./SKILL.md) 复制到 `~/.claude/skills/obsidian-script-output/SKILL.md`；其他 agent 工具见[根 README 的通用说明](../README.md#怎么用)
 2. 替换四个占位符：库路径、素材文件夹、输出文件夹、你的领域
 3. 手动跑一次，检查稿子是否符合「出镜照着念」的标准，再挂定时
 
