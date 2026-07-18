@@ -1,82 +1,85 @@
 # Real Agent Workflows
 
-> 我真实在跑的 AI 工作流，逐条开源。
-> My real, running AI workflows — open-sourced one at a time. Docs are in Chinese. Each SKILL.md is a plain-markdown playbook: Claude Code reads it natively, and any agent tool (Codex, OpenCode, OpenClaw, Hermes, …) can follow it.
+**English** | [中文](./README.zh-CN.md)
 
-这里没有工具榜单。每个文件夹是一条**真实在我电脑上跑的工作流**：写清触发、步骤、产出，附一份脱敏后的 `SKILL.md`。它本质就是一份写清步骤的 markdown 说明书——**这个仓库是向导，不绑定任何工具**，替换几个占位符就能喂给你自己的 agent。
+> My real, running AI workflows — open-sourced one at a time.
 
-完整导览（22 条全量 + 背景）：**[我真实在跑的 22 条 AI 工作流](https://realagentusecases.com/agent-101/03-ai-tools-workflows/)**
+This is not a tool list. Every folder here is a **workflow that actually runs on my computer**: trigger, steps, and output spelled out, plus a sanitized `SKILL.md`. A SKILL.md is just a plain-markdown playbook — **this repo is a guide, not a plugin, and it is not locked to any tool**. Replace a few placeholders and feed it to whatever agent you use.
 
-## Skill 和工作流的区别
+Full tour (all 22 workflows, with context): **[The 22 AI workflows I actually run](https://realagentusecases.com/agent-101/03-ai-tools-workflows/)** (in Chinese)
 
-- **Skill** = 一个能力：怎么做好一件事的说明书，被动调用。
-- **工作流** = 触发 + 步骤 + 产出的完整链条，定时或事件触发，自己跑。
+> Per-workflow docs and SKILL.md files are currently written in Chinese. They are plain markdown — paste one into your agent and ask it to translate or adapt; the structure carries over as-is.
 
-本仓库按**工作流**组织；每条工作流的载体是 `SKILL.md`——一份任何 agent 都能执行的步骤说明书，挂上定时触发就成为工作流。
+## Skill vs. workflow
 
-## 已开源
+- A **skill** is a capability: a playbook for doing one thing well, invoked on demand.
+- A **workflow** is the full chain of trigger + steps + output. It fires on a schedule or an event and runs itself.
 
-| 工作流 | 一句话 | 状态 |
+This repo is organized by **workflow**. Each one ships as a `SKILL.md` — a step-by-step playbook any agent can execute. Put it on a schedule and it becomes a workflow.
+
+## Available now
+
+| Workflow | One line | Status |
 |---|---|---|
-| [Obsidian · AI 新闻输入](./obsidian-ai-news-input/) | 每天自动把过去 24 小时 AI 圈动态写成分类中文简报 + 选题建议，存进 Obsidian | ✅ 可用 |
-| [Obsidian · 首页驾驶舱](./obsidian-morning-cockpit/) | 三源抓料 + Gmail 分类，每早组装成一页早报，素材等人勾选 | ✅ 可用 |
-| [Obsidian · 收藏收割](./obsidian-favorites-harvest/) | 每周抓小红书/抖音收藏新增，筛掉纯娱乐，转文字入知识库 | ✅ 可用 |
-| [Obsidian · 收集箱入库](./obsidian-inbox-ingest/) | 往一个页面粘链接（文章/视频/书），自动抓文或转写，生成知识卡 | ✅ 可用 |
-| [Obsidian · 短视频稿输出](./obsidian-script-output/)（可选下游） | 从素材库选题，每天产出中英各一版 1 分半口播逐字稿 | ✅ 可用 |
-| [邮箱 Triage](./email-triage/) | 输一个词，读完 24 小时邮件，打标（Action Required / FYI）+ P0/P1/P2 待办清单 | ✅ 可用 |
+| [Obsidian · AI news input](./obsidian-ai-news-input/) | Turns the last 24 hours of AI news into a categorized briefing + content topic ideas in your Obsidian vault, daily | ✅ Ready |
+| [Obsidian · Morning cockpit](./obsidian-morning-cockpit/) | Pulls three news sources + triages overnight email into a one-page morning briefing; you just tick checkboxes | ✅ Ready |
+| [Obsidian · Favorites harvest](./obsidian-favorites-harvest/) | Weekly: grabs new saves from Xiaohongshu/Douyin favorites, filters out pure entertainment, transcribes into knowledge cards | ✅ Ready |
+| [Obsidian · Inbox ingest](./obsidian-inbox-ingest/) | Paste any link (article / video / book) onto one page; it fetches or transcribes and files a knowledge card | ✅ Ready |
+| [Obsidian · Script output](./obsidian-script-output/) (optional downstream) | Picks a topic from your vault and drafts a 90-second word-for-word script daily, in both English and Chinese | ✅ Ready |
+| [Email triage](./email-triage/) | One trigger word: reads 24h of email, labels (Action Required / FYI), outputs a P0/P1/P2 to-do list | ✅ Ready |
 
-这些合起来是一个完整闭环：**资讯、收藏、随手粘的链接进库（输入）→ 一页早报人工勾选（把关）→ 素材变稿（输出）**，人只负责粘链接、打勾、拍板和出镜。
+Together they form a closed loop: **news, saves, and pasted links flow in (input) → a one-page briefing you approve with checkboxes (human gate) → material becomes scripts (output)**. The human only pastes links, ticks boxes, makes calls, and records on camera.
 
-## 开源路线图（编号对齐导览页）
+## Roadmap (numbers match the tour page)
 
-**全自动 · 定时任务**
+**Fully automatic · scheduled**
 
-| # | 工作流 | 状态 |
+| # | Workflow | Status |
 |---|---|---|
-| 01 | AI 热点存档（每天 05:34） | ✅ 见上 |
-| 02 | 首页驾驶舱：三源抓料 + Gmail 分类 → 一页早报（每天 06:11） | ✅ 见上 |
-| 03 | 短视频日更稿（每天下午） | ✅ 见上 |
-| 06 | 收藏收割：小红书/抖音收藏 → 筛掉娱乐 → 转文字入库（每周三） | ✅ 见上 |
+| 01 | AI news archive (daily, 05:34) | ✅ Above |
+| 02 | Morning cockpit: three sources + email triage → one-page briefing (daily, 06:11) | ✅ Above |
+| 03 | Daily short-video script (daily, afternoon) | ✅ Above |
+| 06 | Favorites harvest: Xiaohongshu/Douyin saves → filter → transcribe (weekly) | ✅ Above |
 
-（04 长视频稿与私有对标素材耦合太深，不进开源计划；05 每晚入库的「收集箱链接 → 知识卡」部分已抽成独立工作流开源，见上。）
+(04 long-video scripts are too coupled to private benchmark material to open-source; the inbox-link half of 05 nightly ingest has been extracted as its own workflow — see above.)
 
-**手动触发 · 内容管线**
+**Manually triggered · content pipeline**
 
-| # | 工作流 | 状态 |
+| # | Workflow | Status |
 |---|---|---|
-| 07 | 素材库 → 口播稿（一句「跑一单」出多份成稿） | 整理中 |
-| 08 | 拍摄后自动剪辑（Drive 监听 + 按时间戳叠 B-roll） | 整理中 |
-| 09 | YouTube / 小红书 / 抖音视频 → 逐字稿 | 整理中 |
-| 10 | 爆款选题生成器（给一个行业出一批题） | 整理中 |
+| 07 | Vault → talking-head scripts (one command, several drafts) | In progress |
+| 08 | Post-shoot auto-editing (Drive watch + timestamped B-roll overlays) | In progress |
+| 09 | YouTube / Xiaohongshu / Douyin video → transcript | In progress |
+| 10 | Viral topic generator (give it an industry, get a batch of angles) | In progress |
 
-**浏览器控制 · 网站与获客**
+**Browser control · website & leads**
 
-| # | 工作流 | 状态 |
+| # | Workflow | Status |
 |---|---|---|
-| 11-16 | 建站部署、DNS 搬家、Google 商家档案注册、SEO 迭代 + 收录提交、设计系统重做、帮别人的站做 SEO/GEO | 整理中 |
+| 11-16 | Site build & deploy, DNS migration, Google Business Profile setup, SEO rounds + indexing, design-system redo, SEO/GEO for a client site | In progress |
 
-**决策与零活**
+**Decisions & odd jobs**
 
-| # | 工作流 | 状态 |
+| # | Workflow | Status |
 |---|---|---|
-| 17 | 邮箱 → 打标（Action Required / FYI）+ 待办清单 | ✅ 见上 |
-| 18-22 | 会议 AI 记录、商业诊断、租房申请审核、电子书发 Kindle、会话归档 | 整理中 |
+| 17 | Email → labels (Action Required / FYI) + to-do list | ✅ Above |
+| 18-22 | AI meeting notes, business diagnosis, rental application review, ebook to Kindle, session archiving | In progress |
 
-## 怎么用
+## How to use
 
-这个仓库是**向导，不是插件**。用什么 agent 工具都行：
+This repo is a **guide, not a plugin**. Any agent tool works:
 
-- **Claude Code**：把 `SKILL.md` 复制到 `~/.claude/skills/<名字>/SKILL.md` 即被识别，挂 scheduled task 变定时
-- **Codex / OpenCode / OpenClaw / Hermes 或其他 agent**：把 `SKILL.md` 的内容当作任务指令喂给它，用各家自己的定时机制触发
-- 不管用哪个：先替换文件顶部说明的占位符 → 手动跑一次验证产出 → 再挂定时
+- **Claude Code**: copy a `SKILL.md` to `~/.claude/skills/<name>/SKILL.md` — it is picked up automatically; add a scheduled task to make it recurring
+- **Codex / OpenCode / OpenClaw / Hermes / anything else**: feed the `SKILL.md` content to your agent as task instructions and use its own scheduling mechanism
+- Either way: replace the placeholders listed at the top of each file → run once manually to check the output → then put it on a schedule
 
-另外，工作流里的具体内容也只是**我在意的东西**：信息源、平台、分类领域都按你自己的生活换。结构是通用的，内容是你的。
+Also, the specifics inside these workflows are just **what I happen to care about**: swap the news sources, platforms, and categories for your own life. The structure is universal; the content is yours.
 
-别一次装全部。**挑一条离你的活最近的，跑满两周，还在手动救火就删掉重来。**
+Don't install everything at once. **Pick the one closest to your actual work, run it for two weeks, and if you're still firefighting manually, delete it and rebuild.**
 
-## 订阅
+## Subscribe
 
-每周一条完整可复制的工作流拆解（触发、工具、步骤、踩过的坑）：[realagentusecases.com](https://realagentusecases.com)
+One fully reproducible workflow breakdown per week (trigger, tools, steps, the mistakes): [realagentusecases.com](https://realagentusecases.com)
 
 ## License
 
