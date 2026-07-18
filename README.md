@@ -4,7 +4,7 @@
 
 > My real, running AI workflows — open-sourced one at a time.
 
-This is not a tool list. Every folder here is a **workflow that actually runs on my computer**: trigger, steps, and output spelled out, plus a sanitized `SKILL.md`. A SKILL.md is just a plain-markdown playbook — **this repo is a guide, not a plugin, and it is not locked to any tool**. Replace a few placeholders and feed it to whatever agent you use.
+This is not a tool list. Every folder here is a **workflow that actually runs on my computer**: trigger, steps, and output spelled out, plus a sanitized `SKILL.md`. A SKILL.md is just a plain-markdown playbook — **this repo is a guide, not a plugin, and it is not locked to any tool**. Replace the placeholders and map capability labels such as WebSearch or browser control to the equivalent tools in your agent.
 
 Full tour (all 22 workflows, with context): **[The 22 AI workflows I actually run](https://realagentusecases.com/agent-101/03-ai-tools-workflows/)** (in Chinese)
 
@@ -15,18 +15,18 @@ Full tour (all 22 workflows, with context): **[The 22 AI workflows I actually ru
 - A **skill** is a capability: a playbook for doing one thing well, invoked on demand.
 - A **workflow** is the full chain of trigger + steps + output. It fires on a schedule or an event and runs itself.
 
-This repo is organized by **workflow**. Each one ships as a `SKILL.md` — a step-by-step playbook any agent can execute. Put it on a schedule and it becomes a workflow.
+This repo is organized by **workflow**. Each one ships as a `SKILL.md` — a step-by-step playbook you can adapt to an agent with the required capabilities. Put it on a schedule and it becomes a workflow.
 
 ## Available now
 
 | Workflow | One line | Status |
 |---|---|---|
 | [Obsidian · AI news input](./obsidian-ai-news-input/) | Turns the last 24 hours of AI news into a categorized briefing + content topic ideas in your Obsidian vault, daily | ✅ Ready |
-| [Obsidian · Morning cockpit](./obsidian-morning-cockpit/) | Pulls three news sources + triages overnight email into a one-page morning briefing; you just tick checkboxes | ✅ Ready |
-| [Obsidian · Favorites harvest](./obsidian-favorites-harvest/) | Weekly: grabs new saves from Xiaohongshu/Douyin favorites, filters out pure entertainment, transcribes into knowledge cards | ✅ Ready |
-| [Obsidian · Inbox ingest](./obsidian-inbox-ingest/) | Paste any link (article / video / book) onto one page; it fetches or transcribes and files a knowledge card | ✅ Ready |
+| [Obsidian · Morning cockpit](./obsidian-morning-cockpit/) | Pulls three news sources + triages overnight email into a one-page morning briefing; you just tick checkboxes | ✅ Ready · email connector optional |
+| [Obsidian · Favorites harvest](./obsidian-favorites-harvest/) | Weekly: grabs new saves from Xiaohongshu/Douyin favorites, filters out pure entertainment, transcribes into knowledge cards | ✅ Ready · browser + `yt-dlp` + Whisper |
+| [Obsidian · Inbox ingest](./obsidian-inbox-ingest/) | Paste any link (article / video / book) onto one page; it fetches or transcribes and files a knowledge card | ✅ Ready · media tools depend on link type |
 | [Obsidian · Script output](./obsidian-script-output/) (optional downstream) | Picks a topic from your vault and drafts a 90-second word-for-word script daily, in both English and Chinese | ✅ Ready |
-| [Email triage](./email-triage/) | One trigger word: reads 24h of email, labels (Action Required / FYI), outputs a P0/P1/P2 to-do list | ✅ Ready |
+| [Email triage](./email-triage/) | One trigger word: reads 24h of email, labels (Action Required / FYI), outputs a P0/P1/P2 to-do list | ✅ Ready · email connector required |
 
 Together they form a closed loop: **news, saves, and pasted links flow in (input) → a one-page briefing you approve with checkboxes (human gate) → material becomes scripts (output)**. The human only pastes links, ticks boxes, makes calls, and records on camera.
 
@@ -71,6 +71,7 @@ This repo is a **guide, not a plugin**. Any agent tool works:
 
 - **Claude Code**: copy a `SKILL.md` to `~/.claude/skills/<name>/SKILL.md` — it is picked up automatically; add a scheduled task to make it recurring
 - **Codex / OpenCode / OpenClaw / Hermes / anything else**: feed the `SKILL.md` content to your agent as task instructions and use its own scheduling mechanism
+- Tool names such as `WebSearch`, `WebFetch`, and browser control describe capabilities, not universal command names; map them to the equivalent tools your agent provides
 - Either way: replace the placeholders listed at the top of each file → run once manually to check the output → then put it on a schedule
 
 Also, the specifics inside these workflows are just **what I happen to care about**: swap the news sources, platforms, and categories for your own life. The structure is universal; the content is yours.
