@@ -1,0 +1,14 @@
+interface:
+  display_name: Move Address Manager
+  short_description: Find, update, and verify every address on file.
+  default_prompt: Use $move-address-manager to audit every organization that may have
+    my old address, then help me update and verify them safely.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: true
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
