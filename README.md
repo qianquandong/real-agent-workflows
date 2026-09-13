@@ -1,91 +1,142 @@
-# Real Agent Workflows
+<div align="center">
 
-**English** | [中文](./README.zh-CN.md)
+# ⚡ Real Agent Workflows
 
-> My real, running AI workflows — open-sourced one at a time.
+### Real AI playbooks for work, life, research, and automation.
 
-This is not a tool list. Every folder here is a **workflow that actually runs on my computer**: trigger, steps, and output spelled out, plus a sanitized `SKILL.md`. A SKILL.md is just a plain-markdown playbook — **this repo is a guide, not a plugin, and it is not locked to any tool**. Replace the placeholders and map capability labels such as WebSearch or browser control to the equivalent tools in your agent.
+**Not a prompt dump. Not a tool directory.**  
+Every folder is a reusable workflow or skill with the trigger, decision logic, steps, guardrails, and output spelled out.
 
-Full tour (all 22 workflows, with context): **[The 22 AI workflows I actually run](https://realagentusecases.com/agent-101/03-ai-tools-workflows/)** (in Chinese)
+[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](./LICENSE)
+[![Format: Markdown](https://img.shields.io/badge/Format-Markdown-111111.svg)](#how-to-use)
+[![Built for Agents](https://img.shields.io/badge/Built%20for-AI%20Agents-6f42c1.svg)](#how-to-use)
+[![Language](https://img.shields.io/badge/Docs-English%20%2B%20中文-0ea5e9.svg)](./README.zh-CN.md)
 
-> Per-workflow docs and SKILL.md files are currently written in Chinese. They are plain markdown — paste one into your agent and ask it to translate or adapt; the structure carries over as-is.
+[中文](./README.zh-CN.md) · [Full workflow tour](https://realagentusecases.com/agent-101/03-ai-tools-workflows/) · [Follow list](./FOLLOW.md)
 
-## Skill vs. workflow
+</div>
 
-- A **skill** is a capability: a playbook for doing one thing well, invoked on demand.
-- A **workflow** is the full chain of trigger + steps + output. It fires on a schedule or an event and runs itself.
+---
 
-This repo is organized by **workflow**. Each one ships as a `SKILL.md` — a step-by-step playbook you can adapt to an agent with the required capabilities. Put it on a schedule and it becomes a workflow.
+## 🌟 Featured: US 留子 AI 生存副驾驶
 
-## Available now
+> **来美国以后，所有“我现在该怎么办”，都可以问它。**
 
-| Workflow | One line | Status |
-|---|---|---|
-| [Obsidian · AI news input](./obsidian-ai-news-input/) | Turns the last 24 hours of AI news into a categorized briefing + content topic ideas in your Obsidian vault, daily | ✅ Ready |
-| [Obsidian · Morning cockpit](./obsidian-morning-cockpit/) | Pulls three news sources + triages overnight email into a one-page morning briefing; you just tick checkboxes | ✅ Ready · email connector optional |
-| [Obsidian · Favorites harvest](./obsidian-favorites-harvest/) | Weekly: grabs new saves from Xiaohongshu/Douyin favorites, filters out pure entertainment, transcribes into knowledge cards | ✅ Ready · browser + `yt-dlp` + Whisper |
-| [Obsidian · Inbox ingest](./obsidian-inbox-ingest/) | Paste any link (article / video / book) onto one page; it fetches or transcribes and files a knowledge card | ✅ Ready · media tools depend on link type |
-| [Obsidian · Script output](./obsidian-script-output/) (optional downstream) | Picks a topic from your vault and drafts a 90-second word-for-word script daily, in both English and Chinese | ✅ Ready |
-| [Email triage](./email-triage/) | One trigger word: reads 24h of email, labels (Action Required / FYI), outputs a P0/P1/P2 to-do list | ✅ Ready · email connector required |
+A Chinese-first survival copilot for international students and newcomers in the U.S. It is built around real questions — not encyclopedia categories.
 
-Together they form a closed loop: **news, saves, and pasted links flow in (input) → a one-page briefing you approve with checkboxes (human gate) → material becomes scripts (output)**. The human only pastes links, ticks boxes, makes calls, and records on camera.
+| Ask it like this | What it actually does |
+|---|---|
+| 🏠 **帮我选公寓** | commute radius → live inventory → all-in cost → no-credit packet → review risk → lease checklist |
+| ✈️ **帮我找最便宜的回国机票** | gateways → connection risk → baggage → self-transfer → true trip cost |
+| 🚗 **帮我买第一辆车** | VIN → title → recall → insurance quote → PPI → written OTD → decision |
+| 💳 **帮我办第一张信用卡** | SSN/ITIN/credit-history routing → starter options → credit-building rules |
+| 🍜 **告诉我附近中国人爱吃什么** | location-aware restaurant search → recent reviews → cuisine fit → price/distance |
+| 🛋️ **帮我收一套二手家具** | Marketplace search → scam/bedbug checks → negotiation → pickup plan |
+| 👯 **帮我找附近华人群/活动** | campus + city + interest → real communities/events → low-friction first step |
+| ❤️ **帮我找对象** | app/channel choice → profile → first-date norms → safety → intent filtering |
+| 📦 **帮我找靠谱海运** | restricted-item screening → quote normalization → volumetric weight → customs → claims |
+| 🏥 **我生病了该去哪** | ER vs urgent care vs PCP → network check → EOB/bill audit |
+| 💼 **帮我找实习** | Handshake + LinkedIn + alumni + outreach + CPT/OPT guardrails |
+| 🇺🇸 **这会不会影响 F-1？** | classify activity → check current official rules → flag DSO/lawyer escalation |
 
-## Roadmap (numbers match the tour page)
+**49 Markdown files · 30+ actionable playbooks · 16 high-frequency problem pools · templates + examples + source index**
 
-**Fully automatic · scheduled**
+### → [Open the full US 留子 Copilot skill](./skills/us-liuzi-copilot/)
+### → [Read `SKILL.md`](./skills/us-liuzi-copilot/SKILL.md)
 
-| # | Workflow | Status |
-|---|---|---|
-| 01 | AI news archive (daily, 05:34) | ✅ Above |
-| 02 | Morning cockpit: three sources + email triage → one-page briefing (daily, 06:11) | ✅ Above |
-| 03 | Daily short-video script (daily, afternoon) | ✅ Above |
-| 06 | Favorites harvest: Xiaohongshu/Douyin saves → filter → transcribe (weekly) | ✅ Above |
+---
 
-(04 long-video scripts are too coupled to private benchmark material to open-source; the inbox-link half of 05 nightly ingest has been extracted as its own workflow — see above.)
+## 🧭 What this repository is
 
-**Manually triggered · content pipeline**
+A **skill** is a reusable capability: a playbook for doing one thing well on demand.  
+A **workflow** is the full chain of trigger → steps → output, often scheduled or event-driven.
 
-| # | Workflow | Status |
-|---|---|---|
-| 07 | Vault → talking-head scripts (one command, several drafts) | In progress |
-| 08 | Post-shoot auto-editing (Drive watch + timestamped B-roll overlays) | In progress |
-| 09 | YouTube / Xiaohongshu / Douyin video → transcript | In progress |
-| 10 | Viral topic generator (give it an industry, get a batch of angles) | In progress |
+This repository contains both. Each one is intentionally plain Markdown so it can be adapted to Claude Code, Codex, OpenCode, Hermes, OpenClaw, or any other agent that can follow instructions and use equivalent tools.
 
-**Browser control · website & leads**
+## 🧩 Available now
 
-| # | Workflow | Status |
-|---|---|---|
-| 11-16 | Site build & deploy, DNS migration, Google Business Profile setup, SEO rounds + indexing, design-system redo, SEO/GEO for a client site | In progress |
+| Project | Type | What it does | Status |
+|---|---|---|---|
+| [🇺🇸 US 留子 AI 生存副驾驶](./skills/us-liuzi-copilot/) | Skill | Housing, cars, flights, credit, food, health, social life, F-1/OPT, shipping, jobs, and U.S. life decisions | ✅ Ready |
+| [📦 Move Address Manager](./skills/move-address-manager/) | Skill | Plans and tracks address changes across accounts and services when moving | ✅ Ready |
+| [🧠 Obsidian · AI news input](./obsidian-ai-news-input/) | Workflow | Turns the last 24h of AI news into categorized notes + topic ideas | ✅ Ready |
+| [☀️ Obsidian · Morning cockpit](./obsidian-morning-cockpit/) | Workflow | Pulls sources + triages overnight email into a one-page morning briefing | ✅ Ready |
+| [⭐ Obsidian · Favorites harvest](./obsidian-favorites-harvest/) | Workflow | Converts saved Xiaohongshu/Douyin content into filtered knowledge cards | ✅ Ready |
+| [📥 Obsidian · Inbox ingest](./obsidian-inbox-ingest/) | Workflow | Turns pasted articles/videos/books into organized knowledge cards | ✅ Ready |
+| [🎬 Obsidian · Script output](./obsidian-script-output/) | Workflow | Drafts short-form scripts from the knowledge vault | ✅ Ready |
+| [📧 Email triage](./email-triage/) | Workflow | Labels incoming mail and produces a P0/P1/P2 action list | ✅ Ready |
 
-**Decisions & odd jobs**
+---
 
-| # | Workflow | Status |
-|---|---|---|
-| 17 | Email → labels (Action Required / FYI) + to-do list | ✅ Above |
-| 18-22 | AI meeting notes, business diagnosis, rental application review, ebook to Kindle, session archiving | In progress |
+## 🚀 How to use
 
-## How to use
+```text
+1. Pick one skill/workflow close to a real problem you have.
+2. Open its SKILL.md.
+3. Give that file to your agent as operating instructions.
+4. Map capability labels (web search, email, browser, files...) to your agent's tools.
+5. Replace placeholders and run once manually.
+6. Only then automate or schedule it.
+```
 
-This repo is a **guide, not a plugin**. Any agent tool works:
+**Claude Code** — copy a skill to `~/.claude/skills/<name>/SKILL.md`.  
+**Codex / OpenCode / Hermes / OpenClaw / others** — feed the `SKILL.md` to the agent and map the required capabilities to equivalent tools.
 
-- **Claude Code**: copy a `SKILL.md` to `~/.claude/skills/<name>/SKILL.md` — it is picked up automatically; add a scheduled task to make it recurring
-- **Codex / OpenCode / OpenClaw / Hermes / anything else**: feed the `SKILL.md` content to your agent as task instructions and use its own scheduling mechanism
-- Tool names such as `WebSearch`, `WebFetch`, and browser control describe capabilities, not universal command names; map them to the equivalent tools your agent provides
-- Either way: replace the placeholders listed at the top of each file → run once manually to check the output → then put it on a schedule
+> The tool names are intentionally generic. The logic should survive even when the agent stack changes.
 
-Also, the specifics inside these workflows are just **what I happen to care about**: swap the news sources, platforms, and categories for your own life. The structure is universal; the content is yours.
+---
 
-Don't install everything at once. **Pick the one closest to your actual work, run it for two weeks, and if you're still firefighting manually, delete it and rebuild.**
+## 🧠 Design principles
 
-## Follow list
+- **Action over explanation** — end with what the user should do next.
+- **Fresh data when it matters** — prices, rules, schedules, availability, laws, and local recommendations should be checked live.
+- **Official sources for high-risk topics** — immigration, taxes, healthcare, safety, and legal rules are not guessed from Reddit.
+- **Community data for lived experience** — recent reviews and discussions are useful for quality-of-life judgment, not as legal authority.
+- **All-in cost over sticker price** — rent, flights, cars, shipping, and subscriptions are compared on actual total cost.
+- **Human gates for irreversible actions** — paying, signing, filing, booking, cancelling, or sending should be explicit.
 
-36 AI creators and accounts worth following (YouTube / X / Bilibili / newsletters / podcasts), curated as input sources for these workflows: [FOLLOW.md](./FOLLOW.md) (Chinese) · [web version](https://realagentusecases.com/follow/)
+---
 
-## Subscribe
+## 🗺️ Roadmap
 
-One fully reproducible workflow breakdown per week (trigger, tools, steps, the mistakes): [realagentusecases.com](https://realagentusecases.com)
+**Fully automatic / scheduled**
+- AI news archive
+- Morning cockpit
+- Daily short-video script
+- Favorites harvest
 
-## License
+**Content pipeline**
+- Vault → talking-head scripts
+- Post-shoot auto-editing
+- Video → transcript
+- Viral topic generator
+
+**Browser / business operations**
+- Site build + deploy
+- DNS migration
+- Google Business Profile setup
+- SEO/GEO rounds
+- Lead and local-business workflows
+
+**Life agents**
+- More location-aware newcomer skills
+- Personal admin / move / travel / finance playbooks
+- More bilingual Chinese ↔ U.S. workflows
+
+---
+
+## 📚 More
+
+- **36 AI creators worth following:** [FOLLOW.md](./FOLLOW.md)
+- **Full workflow tour:** [realagentusecases.com](https://realagentusecases.com/agent-101/03-ai-tools-workflows/)
+- **Weekly reproducible workflow breakdowns:** [realagentusecases.com](https://realagentusecases.com)
+
+---
+
+<div align="center">
+
+### Build agents that finish the job.
 
 MIT © Jack Qian
+
+</div>
